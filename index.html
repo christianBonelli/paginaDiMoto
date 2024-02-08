@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Pagina di filtro per moto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<style>
+body{
+    
+    background-image: url("imgmoto/repsol_sfondo.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+   
+}
+
+
+button {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.726);
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  background-color: #3323c4;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+button:active {
+  transform: translateY(-1px);
+  background-color: #584bd1;
+}
+header{
+    display: flex;
+    justify-content: center;
+  }
+  .footer{
+    color: white;
+  }
+  body{
+margin:0;
+overflow-x:hidden;
+}
+
+.footer{
+background:#000;
+padding:30px 0px;
+font-family: 'Play', sans-serif;
+text-align:center;
+}
+
+.footer .row{
+width:100%;
+margin:1% 0%;
+padding:0.6% 0%;
+color:gray;
+font-size:0.8em;
+}
+
+.footer .row a{
+text-decoration:none;
+color:gray;
+transition:0.5s;
+}
+
+.footer .row a:hover{
+color:#fff;
+}
+
+.footer .row ul{
+width:100%;
+}
+
+.footer .row ul li{
+display:inline-block;
+margin:0px 30px;
+}
+
+.footer .row a i{
+font-size:2em;
+margin:0% 1%;
+}
+
+@media (max-width:720px){
+.footer{
+text-align:left;
+padding:5%;
+}
+.footer .row ul li{
+display:block;
+margin:10px 0px;
+text-align:left;
+}
+.footer .row a i{
+margin:0% 3%;
+}
+}
+</style>
+</head>
+<body>
+    <header>
+       <nav class="navbar navbar-expand-lg navbar-dark" >
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="imgmoto/logo_sfondo_moto.png" alt="" width="150px"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Lista Moto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Prezzi</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+            <button class="button" data-bs-toggle="modal" data-bs-target="#prenotazioneModal">
+                <p>Contattami
+              </button>
+              <div class="modal fade" id="prenotazioneModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" >
+                    <div class="modal-content" style="background: black;">
+                        <div class="modal-header">
+                            <h5 style="color: #fff;" class="modal-title" id="exampleModalLabel">Prenotazione</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <!-- Form per le prenotazioni -->
+                        <form>
+                            <div class="modal-body" style="color: #fff;">
+                                <div class="mb-3">
+                                    <label for="nome" class="form-label">Nome</label>
+                                    <input type="text" class="form-control" id="nome" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="dataOra" class="form-label">Data e Ora</label>
+                                    <input type="datetime-local" class="form-control" id="dataOra" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="numero" class="form-label">Numero di telefono</label>
+                                    <input type="tel" class="form-control" id="numero" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="moto" class="form-label">Quale moto sei interessato?</label>
+                                    <input type="text" class="form-control" id="moto" required>
+                                </div>
+                                
+                                <!-- Aggiungi altri campi del form se necessario -->
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="button" data-bs-dismiss="modal">Chiudi</button>
+                                <button type="submit" class="button">Prenota</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+          </nav>
+    </header>
+
+    <div class="button-container">
+    <div class="container overflow-hidden text-center ">
+        
+        <div class="contenitori-botoni">
+            <div class="col">
+            <br>
+            <br>
+            <button class="button"; onclick="filtraPerCategoria('Naked')">Naked</button>
+            <button class="button"; onclick="filtraPerCategoria('Sportiva')">Sportiva</button>
+            <button class="button"; onclick="filtraPerCategoria('Adventure')">Adventure</button>
+        </div>
+        
+    </div>
+        <br>
+   
+        <div>
+        <button class="button"; onclick="filtraPerPrezzo(4000)">Prezzo sotto i 4000</button>
+        <button class="button"; onclick="filtraPerPrezzo(7000)">Prezzo sotto i 7000</button>
+        <button class="button"; onclick="filtraPerPrezzo(15000)">Prezzo sotto i 10000</button>
+    <br />
+    <br />
+    <div class="mb-5">
+    <!--<button class="button"><a class="nav-link" href="index.html">Resetta I campi</a></button>-->
+  </div>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3" id="elenco-moto">
+        <div class="col">
+            <div class="card">
+             </div>
+          
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="footer">
+      <div class="row">
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-instagram"></i></a>
+      <a href="#"><i class="fa fa-youtube"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      </div>
+      
+      <div class="row">
+      <ul>
+      <li><a href="#">Contattaci</a></li>
+      <li><a href="#">I nostri servizi</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Termini & Conditzioni</a></li>
+      <li><a href="#">lavora con noi</a></li>
+      </ul>
+      </div>
+      
+      
+      </div>
+      </footer>
+          
+<script>
+    //Definizione oggetto negoziomoto che conterrà oggetti moto
+    var negozioMoto = {
+        moto:[
+                {nome: "CBR 600 R", categoria: "Sportiva", immagine: "imgmoto/CBR650R.jpg", cilindrata:650, prezzo: 9000},
+                {nome: "Yamaha R6", categoria: "Sportiva", cilindrata: 600, immagine:"imgmoto/yamaha_r6.jfif",prezzo: 10000},
+                {nome: "Hornet 750", categoria: "Naked", cilindrata: 750, immagine: "imgmoto/hornet_750.jpg", prezzo: 6500},
+                {nome: "Ducati multistrada V4", categoria: "Adventure", immagine:"imgmoto/ducati_multistrada_v4.jpg", cilindrata:1100, prezzo: 9000},
+                {nome: "MT-09", categoria: "Naked", cilindrata:900, immagine:"imgmoto/MT_09.jpg", prezzo: 5000},
+                {nome: "Africa Twin", categoria: "Adventure", cilindrata: 1200, immagine:"imgmoto/africa_twin.jpg", prezzo: 14900},
+                {nome: "Ducati Panigale V4", categoria: "Sportiva", immagine:"imgmoto/Panigale-V4-5.jpg", cilindrata: 1098, prezzo: 9999},
+                {nome: "Ducati Streetfighter", categoria:"Naked", cilindrata: 999, immagine:"imgmoto/streetfighter-v4-s.jpg", prezzo: 12000},
+        ],
+        filtraPerCategoria: function(categoria){
+            var motoFiltro =this.moto.filter(function(prodotto){
+                return prodotto.categoria === categoria;
+            });
+            console.log("Moto filtrate per prezzo:", motoFiltro);
+            this.mostraMoto(motoFiltro);
+        },
+        //Funzione per filtrare le moto dal prezzo
+        filtraPerPrezzo: function(prezzoMassimo){
+            var motoFiltro = this.moto.filter(function(prodotto){
+                return prodotto.prezzo <= prezzoMassimo;
+            });
+            console.log("Moto filtrate per categoria:", motoFiltro);
+            this.mostraMoto(motoFiltro);
+        },
+        filtraPerCilindrata: function(cilindrata){
+            var motoFiltro = this.moto.filter(function(prodotto){
+                return prodotto.cilindrata <= cilindrata;
+            });
+            this.mostraMoto(motoFiltro);
+        },
+        mostraMoto: function(motoFiltro){
+            var elencoMoto = document.getElementById("elenco-moto");
+
+            elencoMoto.innerHTML = "";
+            motoFiltro.forEach(function (prodotto){
+                var card = document.createElement("div");
+                card.classList.add("card", "m-3");
+                card.style.width = "18rem";
+                var motociclo = document.createElement("div");
+                var immagine = document.createElement("img");
+                //immagine.src = prodotto.immagine; //Faccio comparire la immagine nella stringa
+                //immagine.style.width = "200px"; //Imposto la grandezza della immagine
+                //immagine.style.height = "auto";
+                //motociclo.classList.add("motociclo");
+                motociclo.innerHTML += "<p>Nome: " + prodotto.nome + ", Categoria: " + prodotto.categoria + ", Cilindrata: "+ prodotto.cilindrata + ", Prezzo: "+ prodotto.prezzo + " €</p>";
+                //elencoMoto.appendChild(motociclo);
+                motociclo.appendChild(immagine);
+                var cardImg = document.createElement("img");
+        cardImg.classList.add("card-img-top");
+        // Aggiungi l'URL dell'immagine desiderata
+        cardImg.src = prodotto.immagine;
+        cardImg.alt = prodotto.nome;
+
+        var cardBody = document.createElement("div");
+        cardBody.classList.add("card-body");
+
+        var cardTitle = document.createElement("h5");
+        cardTitle.classList.add("card-title");
+        cardTitle.textContent = prodotto.nome;
+
+        var cardText = document.createElement("p");
+        cardText.classList.add("card-text");
+        cardText.textContent = "Categoria: " + prodotto.categoria + ", Prezzo: €" + prodotto.prezzo;
+
+        var cardLink = document.createElement("a");
+        cardLink.classList.add("btn", "btn-primary");
+        cardLink.href = "#";
+        
+
+        // Aggiungi gli elementi alla card
+        cardBody.appendChild(cardTitle);
+        cardBody.appendChild(cardText);
+        
+
+        card.appendChild(cardImg);
+        card.appendChild(cardBody);
+        
+               // Aggiungi la card all'elenco delle macchine
+        elencoMoto.appendChild(card);
+       
+
+            });
+                
+        }
+
+    };
+            function filtraPerCategoria(categoria){
+            negozioMoto.filtraPerCategoria(categoria);
+
+    }
+            //Funzione per filtrare i mobili in base al  prezzo
+            function filtraPerPrezzo(prezzoMassimo){
+                negozioMoto.filtraPerPrezzo(prezzoMassimo);
+            }
+            function filtraPerCilindrata(cilindrata){
+                negozioMoto.filtraPerCilindrata(cilindrata);
+            }
+            //Mostra tutti i  mobili all'avvio
+            negozioMoto.mostraMoto(negozioMoto.moto);
+
+</script>
+</body>
+</html>
